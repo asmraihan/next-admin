@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import { ModalProvider } from '@/providers/modal-provider'
+import prismadb from '@/lib/prismadb'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // const store = prismadb.store.findFirst
   return (
     <ClerkProvider>
       <html lang="en">
