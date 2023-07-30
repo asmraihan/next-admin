@@ -32,7 +32,7 @@ const BillboardClient: React.FC<ProductClientProps> = ({
                 </Button>
             </div>
             <Separator />
-            <DataTable searchKey='label' columns={columns} data={data} />
+            <DataTable searchKey='name' columns={columns} data={data} />
 
             <Heading title='API' description='Api endpoints for Products' />
             <Separator />
