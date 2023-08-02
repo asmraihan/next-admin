@@ -40,8 +40,8 @@ export default function StoreSwitcher({
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
             <Button variant={'outline'} size={'sm'} role="combobox" aria-expanded={open} aria-label="Select a store" className={cn("w-[200px] justify-between", className)}>
-                <StoreIcon className="mr-2 h-4 w-4"></StoreIcon>
-                {currentStore?.label}
+                <StoreIcon className="mr-2 h-4 w-4 "></StoreIcon>
+                <p className="text-xs md:text-sm font-medium whitespace-nowrap">{currentStore?.label}</p>
                 <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"/>
             </Button>
         </PopoverTrigger>
@@ -56,7 +56,7 @@ export default function StoreSwitcher({
                                 <CommandItem
                                 key={store.value}
                                 onSelect={() => onStoreSelect(store)}
-                                className="text-sm"
+                                className="text-sm "
                                 >
                                     <StoreIcon className="mr-4 h-4 w-4"/>
                                     {store.label}
