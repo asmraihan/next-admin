@@ -1,3 +1,6 @@
+import { getSalesCount } from "@/actions/get-sales-count"
+import { getStockCount } from "@/actions/get-stock-count"
+import { getTotalRevenue } from "@/actions/get-total-revenue"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Heading from "@/components/ui/heading"
 import { Separator } from "@/components/ui/separator"
@@ -12,7 +15,9 @@ interface DashboardPageProps {
 const DashboardPage: React.FC<DashboardPageProps> = async ({
     params
 }) => {
-
+    const totalRevenue = await getTotalRevenue(params.storeId)
+    const salesCount = await getSalesCount(params.storeId)
+    const stockCount = await getStockCount(params.storeId)
     return (
         <div className="flex-col">
             <div className="flex-1 space-y-4 p-8 pt-6">
@@ -28,7 +33,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">
-                                {formatter.format(123)}
+                                {formatter.format(totalRevenue)}
                             </div>
                         </CardContent>
                     </Card>
@@ -41,7 +46,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">
-                                +25
+                                +{salesCount}
                             </div>
                         </CardContent>
                     </Card>
@@ -54,7 +59,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">
-                                12
+                               {stockCount}
                             </div>
                         </CardContent>
                     </Card>
