@@ -1,6 +1,8 @@
+import { getGraphRevenue } from "@/actions/get-graph-revenue"
 import { getSalesCount } from "@/actions/get-sales-count"
 import { getStockCount } from "@/actions/get-stock-count"
 import { getTotalRevenue } from "@/actions/get-total-revenue"
+import Overview from "@/components/overview"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Heading from "@/components/ui/heading"
 import { Separator } from "@/components/ui/separator"
@@ -18,6 +20,7 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
     const totalRevenue = await getTotalRevenue(params.storeId)
     const salesCount = await getSalesCount(params.storeId)
     const stockCount = await getStockCount(params.storeId)
+    const graphRevenue = await getGraphRevenue(params.storeId)
     return (
         <div className="flex-col">
             <div className="flex-1 space-y-4 p-8 pt-6">
@@ -59,11 +62,20 @@ const DashboardPage: React.FC<DashboardPageProps> = async ({
                         </CardHeader>
                         <CardContent>
                             <div className="text-2xl font-bold">
-                               {stockCount}
+                                {stockCount}
                             </div>
                         </CardContent>
                     </Card>
                 </div>
+                {/* chart */}
+                <Card className="col-span-4">
+                    <CardHeader>
+                        <CardTitle></CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-2">
+                        <Overview data={graphRevenue} />
+                    </CardContent>
+                </Card>
             </div>
         </div>
     )
