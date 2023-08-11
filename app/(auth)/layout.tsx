@@ -20,8 +20,8 @@ export default function AuthLayout({
                         <span className="text-2xl lg:text-4xl font-bold ">Welcome to the Next Store Manager</span>
                     </h1>
                     {/* demo/trail email and pass */}
-                    <h2><span className="text-base lg:text-xl font-semibold text-gray-300">Demo Email: xtsad@mail.co</span></h2>
-                    <h2><span className="text-base lg:text-xl font-semibold text-gray-300">Demo Password: asd123@</span></h2>
+                    <h2><span className="text-base lg:text-xl font-semibold text-gray-300">Demo Email: asmbdm1@gmail.com</span></h2>
+                    <h2><span className="text-base lg:text-xl font-semibold text-gray-300">Demo Password: asmbdm123</span></h2>
                 </div>
 
                 <div
