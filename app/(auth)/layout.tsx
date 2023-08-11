@@ -9,14 +9,14 @@ export default function AuthLayout({
 }) {
     return (
         <div className="flex flex-col-reverse lg:flex-row lg:items-center lg:h-full justify-center lg:justify-start gap-10 lg:gap-32">
-            <div className="lg:w-1/2 lg:h-full bg-slate-900 flex-col p-10 text-white dark:border-r flex">
+            <div className="lg:w-1/2 lg:h-full bg-slate-900 flex-col p-10 text-white dark:border-r flex justify-center items-center">
                 <div className="flex items-center text-lg font-medium mb-10">
                     <Warehouse className="mr-2" size={20} />
                     Next Store Manager
                 </div>
 
-                <div className="space-y-3 border p-5 lg:p-10 rounded-xl">
-                    <h1 className="lg:my-8">
+                <div className="space-y-3 border p-5 lg:p-16 rounded-xl">
+                    <h1 className="">
                         <span className="text-2xl lg:text-4xl font-bold ">Welcome to the Next Store Manager</span>
                     </h1>
                     {/* demo/trail email and pass */}
@@ -52,7 +52,9 @@ export default function AuthLayout({
 
 
             </div>
-            {children}
+            <div className="flex justify-center items-center mt-4 lg:mt-0 lg:w-1/2 mx-auto">
+                {children}
+            </div>
         </div>
     )
 }
